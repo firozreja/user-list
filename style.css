@@ -1,0 +1,308 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* General Styling */
+body {
+  background-image: url(./images/img.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+main {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+/* Title */
+.title {
+  text-align: center;
+  font-size: 48px;
+  margin-bottom: 15px;
+  color: white;
+  font-weight: 700;
+}
+
+.user_creation,
+.user_information {
+  font-size: 32px;
+  color: white;
+}
+
+/* Separator */
+.separator {
+  height: 2px;
+  background-color: #ccc;
+  margin: 20px 0;
+}
+
+/* Form Styling */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.first_div,
+.second_div,
+.third_div {
+  display: flex;
+  gap: 20px;
+}
+
+.first_name,
+.last_name,
+.gender,
+.address,
+.religion,
+.relation,
+.email,
+.phone,
+.date {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.phone {
+  gap: 5px;
+}
+label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  padding: 4px;
+  /* background-color: black; */
+  color: white;
+  font-size: 22px;
+}
+
+input,
+select {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Submit Button */
+.submit {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.submit input[type="submit"] {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 19px;
+}
+
+.submit input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+/* User Search Information */
+.user_search_tools {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.user_search_tools div {
+  display: flex;
+}
+
+.user_search_tools input[type="search"],
+.user_search_tools input[type="date"],
+.user_search_tools select {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Bulk Actions */
+#bulk_action {
+  display: none;
+  background-color: white;
+  padding: 4px 6px;
+  border-radius: 4px;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+#bulk_action button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+}
+
+#bulk_action button#delete_btn {
+  background-color: #dc3545;
+}
+
+#bulk_action button#edit_btn {
+  background-color: #ffc107;
+}
+
+#bulk_action button#dismiss_btn {
+  background-color: #6c757d;
+}
+
+.edit_section {
+  display: none;
+}
+
+#edit_form {
+  display: flex;
+}
+
+/* Table Styling */
+
+table {
+  width: 100%;
+  /* border-collapse: collapse; */
+  table-layout: fixed;
+}
+
+thead {
+  background-color: #3e16d1;
+}
+
+th {
+  padding: 10px;
+  text-align: center;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  word-wrap: break-word;
+  white-space: nowrap;
+}
+
+.checkboxTh {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkbox label {
+  margin: 0;
+  color: white;
+  align-items: center;
+  white-space: nowrap;
+}
+
+td {
+  padding: 10px;
+  white-space: nowrap;
+  text-align: center;
+  word-wrap: break-word;
+  overflow: hidden;
+}
+#tbody tr {
+  background-color: #81a3cf;
+  color: black;
+  font-weight: 600;
+}
+#tbody tr:hover {
+  background-color: rgb(11, 120, 253);
+  color: white;
+}
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+button i {
+  pointer-events: none;
+}
+
+button + button {
+  margin-left: 5px;
+}
+
+#edit {
+  color: #007bff;
+}
+
+#check {
+  color: #28a745;
+}
+
+#delete {
+  color: #dc3545;
+}
+
+table input,
+select {
+  padding: 4px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.saveBTN {
+  font-weight: 700;
+  font-size: 18px;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#noTasksMessages {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 32px;
+  font-weight: 700;
+  color: white;
+}
+
+.scroll_bar {
+  max-width: 1200px;
+  width: 100%;
+  overflow-x: scroll;
+}
+
+.scroll_bar::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+.scroll_bar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.scroll_bar::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #3e16d1, #45a049, #007bff, #ffc107);
+  border-radius: 10px;
+  border: 3px solid #f1f1f1;
+}
+
+.scroll_bar::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #3e16d1, #28a745, #007bff, #dc3545);
+}
+
+.scroll_bar::-webkit-scrollbar-corner {
+  background: #f1f1f1;
+}

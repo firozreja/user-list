@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User List</title>
+    <!-- font awesome cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <script defer src="./app.js"></script>
+  </head>
+  <body>
+    <main>
+      <!-- user heading -->
+      <h1 class="title">User-To-Do-List</h1>
+
+      <!-- user creation -->
+      <h2 class="user_creation">New User Creation</h2>
+      <!-- separator -->
+      <div class="separator"></div>
+
+      <!-- 1st Section Form Start -->
+      <form id="form">
+        <div class="first_div">
+          <div class="first_name">
+            <label for="firstName">First Name:</label>
+            <input
+              required
+              type="text"
+              name="firstName"
+              id="firstName"
+              placeholder="First Name"
+            />
+          </div>
+
+          <div class="last_name">
+            <label for="lastName">Last Name:</label>
+            <input
+              required
+              type="text"
+              name="lastName"
+              id="lastName"
+              placeholder="Last Name"
+            />
+          </div>
+
+          <!-- DOB -->
+          <div class="date">
+            <label for="date">Date of Birth:</label>
+            <input type="date" id="date" name="date" required />
+          </div>
+        </div>
+
+        <div class="second_div">
+          <!-- address -->
+          <div class="address">
+            <label for="address">Address:</label>
+            <input
+              type="text"
+              id="address"
+              name="address"
+              placeholder="Enter Your Address"
+              required
+            />
+          </div>
+
+          <!-- phone -->
+          <div class="phone">
+            <label for="phone">Phone:</label>
+            <select id="phone" name="countryCode" required>
+              <option value="">Select one</option>
+              <option value="+880">+880</option>
+            </select>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              pattern="1[0-9]{9}"
+              required
+            />
+          </div>
+
+          <!-- Email -->
+          <div class="email">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+        </div>
+
+        <div class="third_div">
+          <!-- religion -->
+          <div class="religion">
+            <label for="religion">Religion:</label>
+            <select id="religion" name="religion" required>
+              <option selected value="select one">Select One</option>
+              <option value="islam">Islam</option>
+              <option value="hindu">Hindu</option>
+              <option value="christian">Christian</option>
+              <option value="others">Others</option>
+            </select>
+          </div>
+
+          <!-- relation -->
+          <div class="relation">
+            <label for="relation">Relation:</label>
+            <select id="relation" name="relation" required>
+              <option selected value="select one">Select One</option>
+              <option value="single">Single</option>
+              <option value="married">Married</option>
+            </select>
+          </div>
+
+          <!-- Gender -->
+          <div class="gender">
+            <label for="gender">Gender:</label>
+            <select required name="gender" id="gender">
+              <option selected value="select one">Select One</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="others">Others</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Submit Btn -->
+        <div class="submit">
+          <input type="submit" value="Add Now" />
+        </div>
+      </form>
+      <!-- 1st section form end -->
+
+      <!-- 2nd Section User Search Information Start -->
+      <h3 class="user_information">User Search Information</h3>
+      <div class="separator"></div>
+
+      <div class="user_search_tools">
+        <!-- search -->
+        <div class="first_search" id="first_search">
+          <label for="search"> Search:</label>
+          <input
+            type="search"
+            name="search"
+            id="search"
+            placeholder="Search by first name"
+          />
+        </div>
+
+        <!-- <div class="last_search">
+          <label for="search">Last Name:</label>
+          <input
+            type="search"
+            name="search"
+            id="search"
+            placeholder="Search by last name"
+          />
+        </div> -->
+
+        <!-- filter -->
+        <div class="filter">
+          <label for="filter">Filter:</label>
+          <select name="filter" id="filter">
+            <option value="all">All</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="others">Others</option>
+            <option value="islam">Islam</option>
+            <option value="hindu">Hindu</option>
+            <option value="christian">christian</option>
+            <option value="married">Married</option>
+            <option value="single">Single</option>
+          </select>
+        </div>
+
+        <!-- Sort -->
+        <div class="sort">
+          <label for="sort">Sort:</label>
+          <select name="sort" id="sort">
+            <option value="newest">Newest</option>
+            <option value="oldest">Oldest</option>
+          </select>
+        </div>
+
+        <!-- select date -->
+        <div class="by_date">
+          <label for="by_date">By_Date:</label>
+          <input type="date" name="by_date" id="by_date" />
+        </div>
+      </div>
+      <!-- 2nd Section User Search Information End -->
+
+      <!-- 3rd  bulk section start -->
+      <div id="bulk_action">
+        <button id="delete_btn">Delete</button>
+        <button id="edit_btn">Edit</button>
+        <button id="dismiss_btn">X</button>
+      </div>
+
+      <div class="edit_section" id="edit_section">
+        <form id="edit_form">
+          <div class="first_div">
+            <div class="first_name">
+              <label for="name">First Name:</label>
+              <input
+                type="text"
+                name="firstName"
+                id="first_name"
+                placeholder="First Name"
+              />
+            </div>
+
+            <div class="last_name">
+              <label for="name">Last Name:</label>
+              <input
+                type="text"
+                name="lastName"
+                id="last_name"
+                placeholder="Last Name"
+              />
+            </div>
+
+            <!-- DOB -->
+            <div class="date">
+              <label for="date">Date of Birth:</label>
+              <input type="date" id="date" name="date" />
+            </div>
+          </div>
+
+          <div class="second_div">
+            <!-- address -->
+            <div class="address">
+              <label for="address">Address:</label>
+              <input
+                type="text"
+                id="text"
+                name="address"
+                placeholder="Enter Your Address"
+              />
+            </div>
+
+            <!-- phone -->
+            <div class="phone">
+              <label for="phone">Phone:</label>
+              <select id="countryCode" name="countryCode">
+                <option value="">Select One</option>
+                <option value="+880">+880</option>
+              </select>
+              <input type="tel" id="phone" name="phone" pattern="1[0-9]{9}" />
+            </div>
+
+            <!-- Email -->
+            <div class="email">
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" />
+            </div>
+          </div>
+
+          <div class="third_div">
+            <!-- religion -->
+            <div class="religion">
+              <label for="religion">Religion:</label>
+              <select id="religion" name="religion">
+                <option selected value="">Select One</option>
+                <option value="islam">Islam</option>
+                <option value="hindu">Hindu</option>
+                <option value="christian">Christian</option>
+                <option value="others">Others</option>
+              </select>
+            </div>
+
+            <!-- relation -->
+            <div class="relation">
+              <label for="relation">Relation:</label>
+              <select id="relation" name="relation">
+                <option selected value="">Select One</option>
+                <option value="single">Single</option>
+                <option value="married">Married</option>
+              </select>
+            </div>
+
+            <!-- Gender -->
+            <div class="gender">
+              <label for="gender">Gender:</label>
+              <select name="gender" id="gender">
+                <option selected value="">Select One</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="others">Others</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Submit Btn -->
+          <div class="submit">
+            <input type="submit" value="Update" />
+          </div>
+        </form>
+      </div>
+      <!-- 3rd  bulk section end -->
+
+      <!-- 4th section table start -->
+      <div class="scroll_bar">
+        <table style="display: block; width: 100%">
+          <thead>
+            <tr>
+              <th class="checkboxTh">
+                <label
+                  for="checkbox"
+                  style="margin-right: 5px; background-color: transparent"
+                  for="checkbox"
+                  >All</label
+                >
+                <input
+                  type="checkbox"
+                  style="margin-right: 32px"
+                  name="checkbox"
+                  id="allSelect"
+                />
+              </th>
+              <th>No.</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Gender</th>
+              <th>Address</th>
+              <th>Religion</th>
+              <th>Relation</th>
+              <th>Phone</th>
+              <th>Email</th>
+              <th>Date</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="tbody">
+            <!-- <tr>
+                      <td><input class="checkbox" type="checkbox"></td>
+                      <td>1</td>
+                      <td>Firoz</td>
+                      <td>Reza</td>
+                      <td>Male</td>
+                      <td>Sagoto</td>
+                      <td>Islam</td>
+                      <td>Single</td>
+                      <td>01737093614</td>
+                      <td>firozreja1052@gmail.com</td>
+                      <td>15-07-2024</td>
+                      <td class="action">
+                          <button id="edit" <i class="fa-solid fa-pen"></i></button>
+                          <button id="delete" <i class="fa-solid fa-trash"></i></button>
+                      </td>
+                  </tr> -->
+          </tbody>
+        </table>
+      </div>
+      <!-- 4th section table end -->
+      <div id="noTasksMessages">No item to show, please add new one</div>
+    </main>
+  </body>
+</html>
